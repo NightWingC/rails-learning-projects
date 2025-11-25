@@ -1,0 +1,5 @@
+<section>
+    <% flash.each_with_index do | message, index | %>
+    <%= render partial: "partials/message", locals: { message: message[1], index: index } %>
+    <% end %>
+</section>

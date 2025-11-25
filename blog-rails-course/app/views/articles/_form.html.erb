@@ -1,0 +1,25 @@
+<%= form_with( model: @article, local: true ) do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "block shadow-sm rounded-md border px-3 py-2 mt-2 w-full border-gray-400 focus:outline-blue-600" %>
+    </div>
+
+    <div>
+        <%= form.label :content %>
+        <%= form.rich_text_area :content %>
+    </div>
+
+    <div>
+        <%= form.label :category_elements %>
+        <div class="flex">
+            <% @categories.each do | category | %>
+                <%= form.check_box :category_elements, { multiple: true }, category.id, nil %>
+                <%= category.title %>
+            <% end %>
+        </div>   
+    </div>
+
+    <div class="bg-green hover:bg-amber-200">
+        <%= form.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,9 @@
+<h1 class="col-start-1 col-end-3 mb-5">Contact Details</h1>
+
+<p class="mb-5"><strong class="text-blue-500">First name:</strong> <%= @contact.first_name %></p>
+<p class="mb-5"><strong class="text-blue-500">Last name:</strong> <%= @contact.last_name %></p>
+<p class="mb-5"><strong class="text-blue-500">Email:</strong> <%= @contact.email %></p>
+<p class="mb-5"><strong class="text-blue-500">Phone:</strong> <%= @contact.phone %></p>
+<div class="mt-5">
+    <%= link_to "Back", contacts_path, class: "btn-secundary" %>
+</div>

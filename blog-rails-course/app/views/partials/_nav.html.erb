@@ -1,0 +1,28 @@
+<nav class="bg-slate-400 w-full my-5">
+    <ul class="flex gap-4">
+        <li class="text-red-400 hover:decoration-solid">
+            <%= link_to "Inicio", root_path, class: "" %>
+        </li>
+        <li class="text-red-400 hover:decoration-solid">
+            <%= link_to "Articles", articles_path, class: "" %>
+        </li> 
+        <% if user_signed_in? %>
+            <li class="text-red-400 hover:decoration-solid">
+                <%= link_to "Crear nuevo", new_article_path, class: "" %>
+            </li> 
+            <li>
+                <%= link_to "Editar perfil", perfil_path, class: "" %>
+            </li> 
+            <li>
+                <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "" %>
+            </li>
+        <% else %>
+            <li>
+                <%= link_to "Iniciar Sesión", new_user_session_path, class: "" %>
+            </li>
+            <li>
+                <%= link_to "Iniciar Sesión", new_user_registration_path, class: "" %>
+            </li> 
+        <% end %>
+    </ul>
+</nav>

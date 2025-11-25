@@ -1,0 +1,15 @@
+<div>
+  <h1 class="font-bold text-4xl">Perfil</h1>
+  <p>Editar usuario</p>
+  <%= image_tag url_for( current_user.avatar ), height: 100 , width: 100 %>
+  <%= form_with( model: current_user, local: true ) do | form | %>
+    <div>
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
+
+    <div>
+      <%= form.submit "Guardar", class: "block bg-green-200 p-5 border-solid cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
